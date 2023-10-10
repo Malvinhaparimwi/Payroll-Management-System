@@ -28,10 +28,17 @@ class login extends JFrame{
                     String sql = "select * from Login where Work_ID='"+userName+"' and Pass_Word='"+passWord+"'";
                     ResultSet result = query.executeQuery(sql);
 
+
                     if (result.next()){
                         dispose();
-                        var dash = new DashBoard();
-                        dash.start();
+                        String userType = result.getString("User_Type");
+
+                        if (userType.equals("admin")){
+                            var dash = new DashBoard();
+                        } else if (userType.equals("normal")){
+                            JOptionPane.showMessageDialog(login, "No for you yet");
+                        }
+
                     } else {
                         JOptionPane.showMessageDialog(login, "Incorrect credentials");
                         txtPass.setText("");

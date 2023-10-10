@@ -1,27 +1,601 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="DashBoard">
-  <grid id="27dc6" binding="DashBoard" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="Dash" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="977" height="949"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-14803166"/>
+    </properties>
     <border type="none"/>
     <children>
-      <component id="9db2e" class="javax.swing.JLabel">
+      <grid id="11bfe" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="895" height="-1"/>
+          </grid>
         </constraints>
         <properties>
-          <font name="Bitstream Vera Sans Mono" size="96" style="1"/>
-          <text value="Dash"/>
+          <autoscrolls value="true"/>
+          <background color="-13947600"/>
+          <focusTraversalPolicyProvider value="false"/>
         </properties>
-      </component>
-      <vspacer id="d465d">
+        <border type="none"/>
+        <children>
+          <grid id="5c7b9" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="25" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="true"/>
+            </constraints>
+            <properties>
+              <background color="-14803166"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c4044" class="javax.swing.JLabel" binding="companyName">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Bitstream Vera Sans Mono" size="48" style="1"/>
+                  <foreground color="-852483"/>
+                  <text value="Company Name"/>
+                </properties>
+              </component>
+              <grid id="130b5" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="20" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="true">
+                    <preferred-size width="603" height="80"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-13947600"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="20adc" class="javax.swing.JLabel" binding="employer">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                      <foreground color="-852483"/>
+                      <text value="Employer: "/>
+                    </properties>
+                  </component>
+                  <component id="82dd4" class="javax.swing.JLabel" binding="reference">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                      <foreground color="-852483"/>
+                      <text value="Reference"/>
+                    </properties>
+                  </component>
+                  <component id="e6f4c" class="javax.swing.JLabel" binding="lblReference">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Bitstream Vera Sans Mono" size="36"/>
+                      <foreground color="-16777216"/>
+                      <text value="ref"/>
+                    </properties>
+                  </component>
+                  <component id="c46d5" class="javax.swing.JLabel" binding="empl">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Bitstream Vera Sans Mono" size="36"/>
+                      <foreground color="-16777216"/>
+                      <text value="emp"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <grid id="89251" binding="centerPane" layout-manager="CardLayout" hgap="0" vgap="0">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-14803166"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <grid id="fc6a7" binding="Attend" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <card name="Attend"/>
+                </constraints>
+                <properties>
+                  <background color="-15716336"/>
+                  <foreground color="-7936678"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+              <grid id="d1280" binding="newEmplo" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <card name="newEmplo"/>
+                </constraints>
+                <properties>
+                  <background color="-14803166"/>
+                  <foreground color="-1711277"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <grid id="8e9aa" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="70" left="15" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14803166"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <grid id="db0cd" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="37">
+                        <margin top="0" left="15" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="1" height="1"/>
+                            <preferred-size width="50" height="-1"/>
+                            <maximum-size width="1000" height="1000"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="7e79a" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Name"/>
+                            </properties>
+                          </component>
+                          <component id="6da88" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Address"/>
+                            </properties>
+                          </component>
+                          <component id="d1ce5" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Phone"/>
+                            </properties>
+                          </component>
+                          <component id="cfbf" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="ID Number"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="ffa16" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="40">
+                        <margin top="5" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="1" height="1"/>
+                            <preferred-size width="50" height="-1"/>
+                            <maximum-size width="1000" height="1000"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="21770" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="1c7b0" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="c18d8" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="50f7a" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="3bf90" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="37">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="1" height="1"/>
+                            <preferred-size width="50" height="-1"/>
+                            <maximum-size width="1000" height="1000"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="4b9ac" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Email"/>
+                            </properties>
+                          </component>
+                          <component id="a1341" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Department"/>
+                            </properties>
+                          </component>
+                          <component id="c6be3" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Dependances"/>
+                            </properties>
+                          </component>
+                          <component id="305cd" class="javax.swing.JLabel">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="36" style="1"/>
+                              <foreground color="-852483"/>
+                              <text value="Gender"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="2231c" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="40">
+                        <margin top="5" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                            <minimum-size width="1" height="1"/>
+                            <preferred-size width="50" height="-1"/>
+                            <maximum-size width="1000" height="1000"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <opaque value="false"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="62b67" class="javax.swing.JTextField" default-binding="true">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="5e6d1" class="javax.swing.JTextField" default-binding="true">
+                            <constraints>
+                              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="1e04e" class="javax.swing.JTextField" default-binding="true">
+                            <constraints>
+                              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                          <component id="4c1e2" class="javax.swing.JTextField" default-binding="true">
+                            <constraints>
+                              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                                <preferred-size width="150" height="-1"/>
+                              </grid>
+                            </constraints>
+                            <properties>
+                              <font name="Bitstream Vera Sans Mono" size="28"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="5dccf" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="15" bottom="0" right="20"/>
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-14803166"/>
+                    </properties>
+                    <border type="none"/>
+                    <children>
+                      <component id="e0c74" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <actionCommand value="Departments"/>
+                          <background color="-11052707"/>
+                          <font name="Bitstream Vera Sans Mono" size="36"/>
+                          <foreground color="-852483"/>
+                          <text value="Enter"/>
+                        </properties>
+                      </component>
+                      <component id="f7df1" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <actionCommand value="Departments"/>
+                          <background color="-11052707"/>
+                          <font name="Bitstream Vera Sans Mono" size="36"/>
+                          <foreground color="-852483"/>
+                          <text value="Cancel"/>
+                        </properties>
+                      </component>
+                      <component id="c2dab" class="javax.swing.JButton" default-binding="true">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <actionCommand value="Departments"/>
+                          <background color="-11052707"/>
+                          <font name="Bitstream Vera Sans Mono" size="36"/>
+                          <foreground color="-852483"/>
+                          <text value="Clear"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="4ca6a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="70" right="0"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="1" height="1"/>
+            <preferred-size width="100" height="-1"/>
+            <maximum-size width="1000" height="1000"/>
+          </grid>
         </constraints>
-      </vspacer>
+        <properties>
+          <background color="-13947600"/>
+          <foreground color="-14803166"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="c7ba6" layout-manager="GridLayoutManager" row-count="14" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="20" left="10" bottom="70" right="10"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d096" class="javax.swing.JLabel" binding="icon" custom-create="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="fe667" class="javax.swing.JLabel" binding="loggedUser">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Bitstream Vera Sans Mono" size="22"/>
+                  <foreground color="-852483"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="Malvin Haparimwi"/>
+                </properties>
+              </component>
+              <component id="359e8" class="javax.swing.JButton" binding="new_EmployeeButton" default-binding="true">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="NewEmployee"/>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="NewEmployee"/>
+                </properties>
+              </component>
+              <component id="9c24f" class="javax.swing.JButton" binding="deleteEmployeeButton" default-binding="true">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="NewEmployee"/>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="DeleteEmployee"/>
+                </properties>
+              </component>
+              <component id="4f41a" class="javax.swing.JButton" binding="attendanceButton" default-binding="true">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="Attendance"/>
+                </properties>
+              </component>
+              <component id="9ea21" class="javax.swing.JButton" binding="departmentsButton" default-binding="true">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="Departments"/>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="Departments"/>
+                </properties>
+              </component>
+              <component id="72c2b" class="javax.swing.JButton" binding="payRollButton" default-binding="true">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="Departments"/>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="PayRoll"/>
+                </properties>
+              </component>
+              <component id="665d8" class="javax.swing.JButton" binding="financesButton" default-binding="true">
+                <constraints>
+                  <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="Departments"/>
+                  <background color="-11052707"/>
+                  <font name="Bitstream Vera Sans Mono" size="36"/>
+                  <foreground color="-852483"/>
+                  <text value="Finances"/>
+                </properties>
+              </component>
+              <vspacer id="466cc">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="205"/>
+                    <maximum-size width="1000" height="1000"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="1531e">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="40"/>
+                    <maximum-size width="200" height="200"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="48c5d">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="40"/>
+                    <maximum-size width="200" height="200"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="43716">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="40"/>
+                    <maximum-size width="200" height="200"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="83796">
+                <constraints>
+                  <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="40"/>
+                    <maximum-size width="200" height="200"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="131dc">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <minimum-size width="1" height="1"/>
+                    <preferred-size width="-1" height="40"/>
+                    <maximum-size width="200" height="200"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+            </children>
+          </grid>
+        </children>
+      </grid>
     </children>
   </grid>
 </form>
