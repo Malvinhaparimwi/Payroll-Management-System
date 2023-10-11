@@ -29,6 +29,12 @@ public class DashBoard extends JFrame{
     private JTextField textField4;
     private JButton financesButton;
     private JButton deleteEmployeeButton;
+    private JTable attendance;
+    private JPanel finance;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JPanel departments;
 
     private Connection con;
 
@@ -63,6 +69,18 @@ public class DashBoard extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(centerPane, "Attend");
+            }
+        });
+        financesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(centerPane, "finance");
+            }
+        });
+        departmentsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(centerPane, "departments");
             }
         });
     }
