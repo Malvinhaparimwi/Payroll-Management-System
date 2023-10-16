@@ -135,7 +135,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="40e87" class="javax.swing.JButton" default-binding="true">
+                      <component id="40e87" class="javax.swing.JButton" binding="btnEnterAtt">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -147,7 +147,7 @@
                           <text value="Enter"/>
                         </properties>
                       </component>
-                      <component id="2ae65" class="javax.swing.JButton" default-binding="true">
+                      <component id="2ae65" class="javax.swing.JButton" binding="btnClearAtt">
                         <constraints>
                           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -171,7 +171,7 @@
                           <text value="Next"/>
                         </properties>
                       </component>
-                      <component id="96ccf" class="javax.swing.JButton" default-binding="true">
+                      <component id="96ccf" class="javax.swing.JButton" binding="btnPrev">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -313,7 +313,7 @@
                               <font name="Bitstream Vera Sans Mono" size="28"/>
                             </properties>
                           </component>
-                          <component id="33448" class="javax.swing.JTextField" default-binding="true">
+                          <component id="33448" class="javax.swing.JTextField" binding="txtHoursWorked">
                             <constraints>
                               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -323,7 +323,7 @@
                               <font name="Bitstream Vera Sans Mono" size="28"/>
                             </properties>
                           </component>
-                          <component id="e228a" class="javax.swing.JTextField" default-binding="true">
+                          <component id="e228a" class="javax.swing.JTextField" binding="txtOvertime">
                             <constraints>
                               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>

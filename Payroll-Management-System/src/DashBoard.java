@@ -43,7 +43,13 @@ public class DashBoard extends JFrame{
     private JButton btnNext;
     private JTextField txtAttName;
     private JTextField txtAttWorkID;
-
+    private JButton btnPrev;
+    private JButton btnClearAtt;
+    private JTextField txtHoursWorked;
+    private JTextField txtOvertime;
+    private JButton btnEnterAtt;
+    private int stepRow;
+    private int start;
     private Connection con;
     private Statement st;
     protected String currentUser = "mal";
@@ -59,6 +65,7 @@ public class DashBoard extends JFrame{
         setContentPane(Dash);
         setResizable(false);
 
+        start = 1;
         loggedUser.setText(currentUser);
 
         cardLayout = (CardLayout)(centerPane.getLayout());
@@ -66,11 +73,10 @@ public class DashBoard extends JFrame{
         // Database Connection
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/PayRollManagementSystem?user=root", "root", "hapa3000");
-            st = con.createStatement();
+            st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             // Financial data
             String finQuery = "SELECT * FROM finance;";
-            String attJoin = "SELECT e.eName, a.Work_ID, a.Hours_Worked, a.Over_Time FROM attendance a JOIN employee e ON e.WorkID = a.Work_ID;";
             ResultSet finRes = st.executeQuery(finQuery);
 
 
@@ -79,8 +85,19 @@ public class DashBoard extends JFrame{
                 lblFuneral.setText(finRes.getString("Funeral"));
                 lblMedical.setText(finRes.getString("Medical"));
             }
+            finRes.close();
 
+            // Attendance connection
+            String attJoin = "SELECT e.eName, a.Work_ID, a.Hours_Worked, a.Over_Time FROM attendance a JOIN employee e ON e.WorkID = a.Work_ID;";
             atteResult = st.executeQuery(attJoin);
+            atteResult.last();
+            stepRow = atteResult.getRow();
+
+            if (atteResult.next()){
+                txtAttName.setText(atteResult.getString("eName"));
+                txtAttWorkID.setText(atteResult.getString("Work_ID"));
+            }
+
         } catch (Exception E){
             System.out.println(E.getMessage());
         }
@@ -200,12 +217,56 @@ public class DashBoard extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if (atteResult.next()) {
-                        txtAttName.setText(atteResult.getString("eName"));
-                        txtAttWorkID.setText(atteResult.getString("Work_ID"));
+                    if (start <= stepRow) {
+                        String attJoin = "SELECT e.eName, a.Work_ID, a.Hours_Worked, a.Over_Time FROM attendance a JOIN employee e ON e.WorkID = a.Work_ID;";
+                        atteResult = st.executeQuery(attJoin);
+                        if (atteResult.absolute(start++)) {
+                            txtAttName.setText(atteResult.getString("eName"));
+                            txtAttWorkID.setText(atteResult.getString("Work_ID"));
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(Dash, "No more entries");
                     }
                 } catch (Exception at){
                     System.out.println(at);
+                }
+            }
+        });
+        btnPrev.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    if (start >= 1) {
+                        String attJoin = "SELECT e.eName, a.Work_ID, a.Hours_Worked, a.Over_Time FROM attendance a JOIN employee e ON e.WorkID = a.Work_ID;";
+                        atteResult = st.executeQuery(attJoin);
+                        if (atteResult.absolute(--start)) {
+                            txtAttName.setText(atteResult.getString("eName"));
+                            txtAttWorkID.setText(atteResult.getString("Work_ID"));
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(Dash, "You are at the beginning");
+                    }
+                } catch (Exception at){
+                    System.out.println(at);
+                }
+            }
+        });
+        btnClearAtt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtHoursWorked.setText("");
+                txtOvertime.setText("");
+            }
+        });
+        btnEnterAtt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    String updateQuery = "UPDATE attendance SET HOURS_WORKED='"+txtHoursWorked.getText()+"', OVER_TIME='"+txtOvertime.getText()+"' WHERE Work_ID='"+txtAttWorkID.getText()+"';";
+                    int rows = st.executeUpdate(updateQuery);
+
+                } catch (Exception uatt){
+                    System.out.println(uatt);
                 }
             }
         });
