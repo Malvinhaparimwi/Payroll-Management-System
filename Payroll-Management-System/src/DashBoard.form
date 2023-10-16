@@ -159,7 +159,7 @@
                           <text value="Clear"/>
                         </properties>
                       </component>
-                      <component id="c6dd" class="javax.swing.JButton" default-binding="true">
+                      <component id="c6dd" class="javax.swing.JButton" binding="btnNext">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -293,7 +293,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="49e76" class="javax.swing.JTextField" default-binding="true">
+                          <component id="49e76" class="javax.swing.JTextField" binding="txtAttName">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -303,7 +303,7 @@
                               <font name="Bitstream Vera Sans Mono" size="28"/>
                             </properties>
                           </component>
-                          <component id="6f43d" class="javax.swing.JTextField" default-binding="true">
+                          <component id="6f43d" class="javax.swing.JTextField" binding="txtAttWorkID">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -708,7 +708,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="57669" class="javax.swing.JLabel">
+                          <component id="57669" class="javax.swing.JLabel" binding="lblTax">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -718,7 +718,7 @@
                               <text value="Label"/>
                             </properties>
                           </component>
-                          <component id="419a6" class="javax.swing.JLabel">
+                          <component id="419a6" class="javax.swing.JLabel" binding="lblFuneral">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -728,7 +728,7 @@
                               <text value="Label"/>
                             </properties>
                           </component>
-                          <component id="960ea" class="javax.swing.JLabel">
+                          <component id="960ea" class="javax.swing.JLabel" binding="lblMedical">
                             <constraints>
                               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -804,7 +804,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="dbcd5" class="javax.swing.JButton" default-binding="true">
+                          <component id="dbcd5" class="javax.swing.JButton" binding="btnUpdateTax">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -816,7 +816,7 @@
                               <text value="Update Tax"/>
                             </properties>
                           </component>
-                          <component id="6dea9" class="javax.swing.JButton" default-binding="true">
+                          <component id="6dea9" class="javax.swing.JButton" binding="btnUpdateMedical">
                             <constraints>
                               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -828,7 +828,7 @@
                               <text value="Update Med Policy"/>
                             </properties>
                           </component>
-                          <component id="81037" class="javax.swing.JButton" default-binding="true">
+                          <component id="81037" class="javax.swing.JButton" binding="btnUpdateFuuneral">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                             </constraints>
@@ -853,7 +853,7 @@
                         </properties>
                         <border type="none"/>
                         <children>
-                          <component id="2bbc3" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+                          <component id="2bbc3" class="javax.swing.JTextField" binding="txtTax">
                             <constraints>
                               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -863,7 +863,7 @@
                               <font name="Bitstream Vera Sans Mono" size="36" style="0"/>
                             </properties>
                           </component>
-                          <component id="69e7b" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+                          <component id="69e7b" class="javax.swing.JTextField" binding="txtFuneral">
                             <constraints>
                               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>
@@ -873,7 +873,7 @@
                               <font name="Bitstream Vera Sans Mono" size="36" style="0"/>
                             </properties>
                           </component>
-                          <component id="392c0" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+                          <component id="392c0" class="javax.swing.JTextField" binding="txtMedical">
                             <constraints>
                               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                                 <preferred-size width="150" height="-1"/>

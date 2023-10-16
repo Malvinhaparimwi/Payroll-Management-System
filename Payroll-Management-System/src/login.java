@@ -30,23 +30,23 @@ class login extends JFrame{
 
 
                     if (result.next()){
-                        dispose();
+
                         String userType = result.getString("User_Type");
 
                         if (userType.equals("admin")){
                             var dash = new DashBoard();
+                            dash.currentUser = userName;
+
                         } else if (userType.equals("normal")){
                             JOptionPane.showMessageDialog(login, "No for you yet");
                         }
-
+                        dispose();
                     } else {
                         JOptionPane.showMessageDialog(login, "Incorrect credentials");
                         txtPass.setText("");
                         txtUser.setText("");
                     }
-
                     con.close();
-
                 } catch (Exception E){
                     System.out.println(E.getMessage());
                 }
