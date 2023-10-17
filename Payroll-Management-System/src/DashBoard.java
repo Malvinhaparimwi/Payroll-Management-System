@@ -1,16 +1,15 @@
 import javax.swing.*;
-import javax.xml.transform.Result;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class DashBoard extends JFrame{
-    private JPanel Dash;
-    private CardLayout cardLayout;
-    private JLabel companyName;
-    private JLabel employer;
-    private JLabel reference;
+                    private JPanel Dash;
+                    private CardLayout cardLayout;
+                    private JLabel companyName;
+                    private JLabel employer;
+                    private JLabel reference;
     private JLabel lblReference;
     private JLabel empl;
     private JLabel loggedUser;
@@ -22,10 +21,10 @@ public class DashBoard extends JFrame{
     private JButton payRollButton;
     private JPanel newEmplo;
     private JPanel Attend;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
+    private JTextField txtEName;
+    private JTextField txtAddress;
+    private JTextField txtPhone;
+    private JTextField txtIDNo;
     private JButton financesButton;
     private JButton deleteEmployeeButton;
     private JTable attendance;
@@ -48,6 +47,16 @@ public class DashBoard extends JFrame{
     private JTextField txtHoursWorked;
     private JTextField txtOvertime;
     private JButton btnEnterAtt;
+    private JTextField txtWorkID;
+    private JComboBox cmbDept;
+    private JComboBox cmbGender;
+    private JButton btnClear;
+    private JButton btnAddEmplo;
+    private JTextField txtEmail;
+    private JButton btnCrtUser;
+    private JPanel Payroll;
+    private JPanel delEmplo;
+    private JTextField textField1;
     private int stepRow;
     private int start;
     private Connection con;
@@ -69,6 +78,15 @@ public class DashBoard extends JFrame{
         loggedUser.setText(currentUser);
 
         cardLayout = (CardLayout)(centerPane.getLayout());
+
+        // comboboxes for new employee
+        cmbDept.addItem("HR");
+        cmbDept.addItem("Finance");
+        cmbDept.addItem("Operations");
+
+        cmbGender.addItem("Female");
+        cmbGender.addItem("Male");
+
 
         // Database Connection
         try{
@@ -268,6 +286,55 @@ public class DashBoard extends JFrame{
                 } catch (Exception uatt){
                     System.out.println(uatt);
                 }
+            }
+        });
+        btnClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtEName.setText("");
+                txtAddress.setText("");
+                txtIDNo.setText("");
+                txtWorkID.setText("");
+                txtPhone.setText("");
+                cmbDept.setSelectedIndex(1);
+                cmbGender.setSelectedIndex(1);
+                txtEmail.setText("");
+            }
+        });
+
+        btnCrtUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String addUser = "";
+                String addUpdate = "INSERT INTO employee VALUES('" + txtEName.getText() + "', '" + txtWorkID.getText() + "', '" + txtAddress.getText() + "', '" + cmbDept.getSelectedItem() + "', '" + txtPhone.getText() + "', '" + txtEmail.getText() + "', '"+txtIDNo.getText()+"', '" + cmbGender.getSelectedItem() + "');";
+
+
+                String message = "New Employee:\n* Name: " + txtEName.getText() +
+                        "\n* WorkID" + txtWorkID.getText() + "\nUser Type";
+
+                int choice = JOptionPane.showOptionDialog(Dash, message, "Payroll", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                        null, new String[]{"Admin", "Normal"}, "Normal");
+
+                if (choice == 1){
+                    addUser = "INSERT INTO Login VALUES('"+txtWorkID.getText()+"', '"+txtEName.getText()+"', 'normal');";
+                } else if (choice == 0) {
+                    addUser = "INSERT INTO Login VALUES('"+txtWorkID.getText()+"', '"+txtEName.getText()+"', 'admin');";
+                }
+
+                try{
+                    if (!addUser.equals("")) {
+                        st.executeUpdate(addUser);
+                        st.executeUpdate(addUpdate);
+                    }
+                } catch(Exception adU){
+                    System.out.println(adU);
+                }
+            }
+        });
+        payRollButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(centerPane, "Payroll");
             }
         });
     }
